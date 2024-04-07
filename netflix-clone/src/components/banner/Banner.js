@@ -8,7 +8,7 @@ function Banner() {
     useEffect(()=> {
         (async () => {
             try{
-                const request=await Axios.get('https://api.themoviedb.org/3/discover/tv?api_key=d4bb4ba9b2a811952a2c9c6028b063dc&with_networks=219');
+                const request=await Axios.get(`https://api.themoviedb.org/3${Requests.fetchNetflixOriginals}`);
                 // console.log(request);
                 setMovie(request.data.results[
                     Math.floor(Math.random() * request.data.results.length)
